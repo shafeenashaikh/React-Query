@@ -7,6 +7,15 @@ const fetchSuperHeroes = () => {
 
 const RQSuperHeroesPage = () => {
 
+    const onSuccess = (data) => {
+        console.log('Perform sied effect after data fetching', data)
+    }
+
+    const onError = (error) => {
+        console.log('Perform sied effect after encountering error', error)
+    }
+
+
     const {isLoading, data, isError, error, isFetching, refetch} = useQuery(
         'super-heroes', 
         fetchSuperHeroes,
@@ -17,8 +26,14 @@ const RQSuperHeroesPage = () => {
         //     refetchIntervalInBackground: true,
         // }
 
+        // {
+        //     enabled: false,
+        // }
+    //onSuccess and onError 
+
         {
-            enabled: false,
+            onSuccess,
+            onError
         }
         
         )
