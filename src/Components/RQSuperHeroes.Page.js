@@ -1,9 +1,4 @@
-import {useQuery} from 'react-query';
-import axios from 'axios';
-
-const fetchSuperHeroes = () => {
-    return axios.get('http://localhost:3000/superheroes')
-}
+import useSuperHeroesData from "../hooks/useSuperHeroesData"
 
 const RQSuperHeroesPage = () => {
 
@@ -16,31 +11,7 @@ const RQSuperHeroesPage = () => {
     }
 
 
-    const {isLoading, data, isError, error, isFetching, refetch} = useQuery(
-        'super-heroes', 
-        fetchSuperHeroes,
-        // {
-        //     refetchOnMount: true,
-        //     refetchOnWindowFocus: true,
-        //     refetchInterval: 2000,
-        //     refetchIntervalInBackground: true,
-        // }
-
-        // {
-        //     enabled: false,
-        // }
-    //onSuccess and onError 
-
-        {
-            onSuccess,
-            onError,
-            select: (data) => {
-                const superHeroeNames = data.data.map((hero) => hero.name)
-                return superHeroeNames
-                },
-        }
-        
-        )
+    const {isLoading, data, isError, error, isFetching, refetch} = useSuperHeroesData(onSuccess, onError)
 
     console.log(isLoading, isFetching)
 
