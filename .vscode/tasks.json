@@ -7,6 +7,14 @@
 			"problemMatcher": [],
 			"label": "npm: serve-json",
 			"detail": "json-server --watch db.json"
+		},
+		{
+			"type": "npm",
+			"script": "test",
+			"group": "test",
+			"problemMatcher": [],
+			"label": "npm: test",
+			"detail": "react-scripts test"
 		}
 	]
 }
