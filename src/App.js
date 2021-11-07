@@ -6,6 +6,7 @@ import {QueryClientProvider, QueryClient} from 'react-query';
 import SuperHeroesPage from './Components/SuperrHeroes.Page';
 import {ReactQueryDevtools} from 'react-query/devtools'
 import RQSuperHeroPage from './Components/RQSuperHero.Page';
+import ParallelQueryPage from './Components/ParallelQuery.Page';
 
 
 const queryClient = new QueryClient()
@@ -29,6 +30,9 @@ function App() {
          </ul>
        </nav>
        <Switch>
+       <Route path='/rq-parallel'>
+            <ParallelQueryPage/>
+          </Route>
          <Route path='/rq-super-heroes/:heroId'>
             <RQSuperHeroPage/>
           </Route>
