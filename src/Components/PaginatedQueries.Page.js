@@ -8,8 +8,13 @@ const fetchColors = (pageNumber) => {
 
 const PaginatedQueriesPage = () => {
     const [pageNumber, setPageNumber] = useState(1);
-    const {isLoading, isError, error, data } = useQuery(['colors', pageNumber], 
-    () => fetchColors(pageNumber))
+    const {isLoading, isError, error, data, isFetching } = useQuery(['colors', pageNumber], 
+    () => fetchColors(pageNumber),
+    {
+        keepPreviousData: true,
+    }
+    )
+    
 
     if (isLoading) {
         return <h2>Loading...</h2>
@@ -46,6 +51,9 @@ const PaginatedQueriesPage = () => {
                     Next page
                 </button>
             </div>
+            {
+                isFetching && 'Loading'
+            }
         </>
 
     )
