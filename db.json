@@ -29,5 +29,17 @@
             "id": 3,
             "name": "Diana"
         }
+    ],
+    "users": [
+        {
+            "id": "sam@gmail.com",
+            "channelId": "codevolution"
+        }
+    ],
+    "channels": [
+        {
+            "id": "codevolution",
+            "courses": ["react", "Vue", "angular"]
+        }
     ]
 }
