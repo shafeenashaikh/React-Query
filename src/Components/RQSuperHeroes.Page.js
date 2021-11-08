@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import useSuperHeroesData from "../hooks/useSuperHeroesData"
 
 const RQSuperHeroesPage = () => {
+
+    const [name, setName] = useState('');
+    const [ alterEgo, setAlterEgo] = useState('')
 
     const onSuccess = (data) => {
         console.log('Perform sied effect after data fetching', data)
@@ -16,6 +20,10 @@ const RQSuperHeroesPage = () => {
 
     console.log(isLoading, isFetching)
 
+    const handleAddHeroClick = () => {
+        console.log({name, alterEgo})
+    }
+
     if(isLoading || isFetching){
         return <h2>Loading...</h2>
     }
@@ -26,6 +34,20 @@ const RQSuperHeroesPage = () => {
     return (
         <>
             <h2>RQ Super Heroes Page</h2>
+            <div>
+                <input
+                    type='text'
+                    value={name}
+                    onChange={(e)=> setName(e.target.value)}
+                />
+                <input
+                    type='text'
+                    value={alterEgo}
+                    onChange={(e)=> setAlterEgo(e.target.value)}
+                />
+                <button onClick={handleAddHeroClick}>Add heroes</button>
+
+            </div>
             <button onClick={refetch}>Fetch heroes</button>
             {
                 data?.data.map((hero) => {
