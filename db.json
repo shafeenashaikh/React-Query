@@ -49,6 +49,11 @@
       "name": "Wonderman2",
       "alterEgo": "John2",
       "id": 10
+    },
+    {
+      "name": "Batman",
+      "alterEgo": "Sam",
+      "id": 11
     }
   ],
   "friends": [
