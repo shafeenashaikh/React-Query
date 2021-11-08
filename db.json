@@ -34,6 +34,21 @@
       "name": "woman",
       "alterEgo": "alina",
       "id": 7
+    },
+    {
+      "name": "aquaman",
+      "alterEgo": "Bruce",
+      "id": 8
+    },
+    {
+      "name": "Wonderman",
+      "alterEgo": "John",
+      "id": 9
+    },
+    {
+      "name": "Wonderman2",
+      "alterEgo": "John2",
+      "id": 10
     }
   ],
   "friends": [
