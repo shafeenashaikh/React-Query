@@ -24,6 +24,16 @@
       "name": "Sam",
       "alterEgo": "1234",
       "id": 5
+    },
+    {
+      "name": "Diana",
+      "alterEgo": "146",
+      "id": 6
+    },
+    {
+      "name": "woman",
+      "alterEgo": "alina",
+      "id": 7
     }
   ],
   "friends": [
