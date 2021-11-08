@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import useSuperHeroesData from "../hooks/useSuperHeroesData"
+import useSuperHeroesData, { useAddSuperHeroData } from "../hooks/useSuperHeroesData"
 
 const RQSuperHeroesPage = () => {
 
@@ -20,8 +20,13 @@ const RQSuperHeroesPage = () => {
 
     console.log(isLoading, isFetching)
 
+    //useMutation hook
+    const {mutate: addHero} = useAddSuperHeroData()
+
     const handleAddHeroClick = () => {
         console.log({name, alterEgo})
+        const hero = {name, alterEgo}
+        addHero(hero)
     }
 
     if(isLoading || isFetching){
